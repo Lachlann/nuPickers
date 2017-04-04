@@ -12,10 +12,14 @@ angular.module('umbraco.resources')
                     if (pickedOptions == null || pickedOptions.length == 0 || pickedOptions[0] == null) {
                         return null;
                     }
-
+                    
                     switch (config.saveFormat) {
-
+                        
                         case 'csv': // 'key, key...'
+                            var returnData = pickedOptions.map(function (option) {
+                                return escape(option.label);
+                            })
+                            return returnData.join();
                         case 'relationsOnly': // special case - used server-side by relationsOnly mapping event (where this value is then wiped)
                             return pickedOptions.map(function (option) { return option.key; }).join();
                             break;
