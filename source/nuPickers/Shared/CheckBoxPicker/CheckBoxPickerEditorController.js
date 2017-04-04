@@ -46,7 +46,7 @@ angular
                 editorResource.getPickedKeys($scope.model).then(function (pickedKeys) {
                     for (var i = 0; i < pickedKeys.length; i++) { 
                         for (var j = 0; j < $scope.checkBoxPickerOptions.length; j++) { 
-                            if (pickedKeys[i] == $scope.checkBoxPickerOptions[j].key) {
+                            if (unescape(pickedKeys[i]) == $scope.checkBoxPickerOptions[j].key) {
                                 $scope.checkBoxPickerOptions[j].isChecked = true;
                                 break;
                             }

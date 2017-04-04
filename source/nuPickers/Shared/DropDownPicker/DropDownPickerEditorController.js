@@ -15,7 +15,7 @@ angular
 
                         while (!found && i < $scope.dropDownPickerOptions.length) {
 
-                            if ($scope.dropDownPickerOptions[i].key == pickedKeys[0]) {
+                            if ($scope.dropDownPickerOptions[i].key == unescape(pickedKeys[0])) {
                                 $scope.pickedOption = $scope.dropDownPickerOptions[i];
                                 found = true;
                             }
