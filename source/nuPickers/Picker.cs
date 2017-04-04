@@ -8,6 +8,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Web;
     using umbraco;
     using Umbraco.Core;
     using Umbraco.Core.Models;
@@ -114,7 +115,7 @@
                     }
                 }
 
-                return this.pickedKeys;
+                return this.pickedKeys.Select(x=> HttpUtility.UrlDecode(x));
             }
 
             // special case - allows relation-mapping event to set here (so preventing them from being taken from the database)
